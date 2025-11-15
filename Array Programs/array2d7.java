@@ -12,30 +12,31 @@ public class array2d7 {
 
     static void spiral(int[][]a,int r,int c){
         int toprow=0,botrow=r-1,rightcol=c-1,leftcol=0,te=0;
-        for(int j=leftcol;j<rightcol && te<r*c;j++){
-            System.out.print(a[toprow][j] + " ");
-            te ++;
+        while(te<r*c){
+            for(int j=leftcol;j<=rightcol && te<r*c;j++){
+                System.out.print(a[toprow][j] + " ");
+                te ++;
+            }
+            toprow++;
+    
+            for(int i=toprow;i<=botrow && te<r*c;i++){
+                System.out.print(a[i][rightcol]+ " ");
+                te++;
+            }
+            rightcol--;
+    
+            for(int j=rightcol;j>=leftcol && te<r*c;j--){
+                System.out.print(a[botrow][j] + " ");
+                te++;
+            }
+            botrow--;
+    
+            for(int i=botrow;i>=toprow && te<r*c;i--){
+                System.out.print(a[i][leftcol] + " ");
+                te++;
+            }
+            leftcol++;
         }
-        toprow++;
-
-        for(int i=toprow;i<botrow && te<r*c;i++){
-            System.out.print(a[i][rightcol]);
-            te++;
-        }
-        rightcol--;
-
-        for(int j=rightcol;j>=leftcol && te<r*c;j--){
-            System.out.print(a[botrow][j] + " ");
-            te++;
-        }
-        botrow--;
-
-        for(int i=botrow;i>=toprow && te<r*c;i--){
-            System.out.print(a[i][leftcol] + " ");
-            te++;
-        }
-        leftcol++;
-        printMatrix(a);
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

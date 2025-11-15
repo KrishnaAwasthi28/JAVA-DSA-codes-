@@ -22,6 +22,13 @@ public class countNode {
             return newNode;
         }
     }
+    public static void preorder(Node root){
+        if(root==null) return;
+        System.out.println(root.data);
+        preorder(root.left);
+        preorder(root.right);
+
+    }
     public static int count(Node root){
         if(root==null) return 0;
         int leftNodes=count(root.left);
@@ -34,5 +41,6 @@ public class countNode {
         Node root=tree.buildTree(n);
         // System.out.println(root.data);
         System.out.println(count(root));
+        preorder(root);
     }
 }

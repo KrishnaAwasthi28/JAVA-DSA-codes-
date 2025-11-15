@@ -4,7 +4,7 @@ public class bucket {
     static void bucketsort(float[] arr){
         int n=arr.length;
         //Buckets 
-        ArrayList<Float>[] buckets=new ArrayList[n];
+        ArrayList<Float>[] buckets=new ArrayList<>>;
         //Create empty buckets
         for(int i=0;i<n;i++){
             buckets[i]=new ArrayList<Float>();

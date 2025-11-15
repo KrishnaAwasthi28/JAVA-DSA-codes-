@@ -26,13 +26,13 @@ public class linkedlistStack {
             head=head.next;
             return x;
         }
-        // int peek(){
-        //     if(size==0){
-        //         System.out.println("Stack is Empty !");
-        //         return -1;
-        //     }
-        //     return head.data;
-        // }
+        int peek(){
+            if(size==0){
+                System.out.println("Stack is Empty !");
+                return -1;
+            }
+            return head.data;
+        }
         void displayRec(Node h){
             if(h==null) return;
             displayRec(h.next);
